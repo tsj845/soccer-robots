@@ -7,21 +7,21 @@
 #include "Arduino.h"
 #include "zirconLib.h"
 
-#define X1 1.0
-#define X2 0.0
+double X1 = 0.707;
+double X2 = 0.707;
 
-#define U1 -0.5
-#define U2 0.8660254037844386467
+double U1 = 0.5;
+double U2 = 0.8660254037844386467;
 
-#define V1 -0.5
-#define V2 -0.8660254037844386467
+double V1 = 0.5;
+double V2 = -0.8660254037844386467;
 
-#define W1 1.0
-#define W2 0.0
+double W1 = -1.0;
+double W2 = 0.0;
 
-#define MOTOR1 X1*U1+X2*U2
-#define MOTOR2 X1*V1+X2*V2
-#define MOTOR3 X1*W1+X2*W2
+double MOTOR1 = X1*U1+X2*U2;
+double MOTOR2 = X1*V1+X2*V2;
+double MOTOR3 = X1*W1+X2*W2;
 
 #ifndef LED_BUILTIN
 #define LED_BUILTIN 13
@@ -48,16 +48,7 @@ void loop()
    // wait for a second
   delay(1000);
 
-  // motor1(50, 0);
-  // motor2(25, 1);
-  // motor3(25, 1);
-
-  Serial.println(MOTOR1*255);
-  Serial.println(MOTOR2*255);
-  Serial.println(MOTOR3*255);
-  Serial.println();
-
-  // motor1(abs(MOTOR1*255), MOTOR1 < 0 ? 1 : 0);
-  // motor2(abs(MOTOR2*255), MOTOR2 < 0 ? 1 : 0);
-  // motor3(abs(MOTOR3*255), MOTOR3 < 0 ? 1 : 0);
+  motor1(abs(MOTOR1*100), MOTOR1 < 0);
+  motor2(abs(MOTOR2*100), MOTOR2 < 0);
+  motor3(abs(MOTOR3*100), MOTOR3 < 0);
 }

@@ -49,22 +49,22 @@ void loop()
    // wait for a second
   delay(1000);
 
-  Serial.println(X1);
-  Serial.println(X2);
-  Serial.println();
-  Serial.println(U1);
-  Serial.println(U2);
-  Serial.println();
-  Serial.println(V1);
-  Serial.println(V2);
-  Serial.println();
-  Serial.println(W1);
-  Serial.println(W2);
-  Serial.println();
-  Serial.println(MOTOR1*255);
-  Serial.println(MOTOR2*255);
-  Serial.println(MOTOR3*255);
-  Serial.println();
+  // Serial.println(X1);
+  // Serial.println(X2);
+  // Serial.println();
+  // Serial.println(U1);
+  // Serial.println(U2);
+  // Serial.println();
+  // Serial.println(V1);
+  // Serial.println(V2);
+  // Serial.println();
+  // Serial.println(W1);
+  // Serial.println(W2);
+  // Serial.println();
+  // Serial.println(MOTOR1*255);
+  // Serial.println(MOTOR2*255);
+  // Serial.println(MOTOR3*255);
+  // Serial.println();
 
   // motor1(50, 0);
   // motor2(25, 1);

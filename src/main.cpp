@@ -32,6 +32,7 @@ void setup()
   // initialize LED digital pin as an output.
   pinMode(LED_BUILTIN, OUTPUT);
   InitializeZircon();
+  Serial.begin(9600);
 }
 
 void loop()
@@ -48,14 +49,28 @@ void loop()
    // wait for a second
   delay(1000);
 
-  // motor1(50, 0);
-  // motor2(25, 1);
-  // motor3(25, 1);
-
+  Serial.println(X1);
+  Serial.println(X2);
+  Serial.println();
+  Serial.println(U1);
+  Serial.println(U2);
+  Serial.println();
+  Serial.println(V1);
+  Serial.println(V2);
+  Serial.println();
+  Serial.println(W1);
+  Serial.println(W2);
+  Serial.println();
   Serial.println(MOTOR1*255);
   Serial.println(MOTOR2*255);
   Serial.println(MOTOR3*255);
   Serial.println();
+
+  // motor1(50, 0);
+  // motor2(25, 1);
+  // motor3(25, 1);
+
+  // motor2(255,0);
 
   // motor1(abs(MOTOR1*255), MOTOR1 < 0 ? 1 : 0);
   // motor2(abs(MOTOR2*255), MOTOR2 < 0 ? 1 : 0);

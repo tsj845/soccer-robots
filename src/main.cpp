@@ -7,8 +7,7 @@
 #include "Arduino.h"
 #include "zirconLib.h"
 
-double X1 = 0.707;
-double X2 = 0.707;
+double T = 0;
 
 double U1 = 0.5;
 double U2 = 0.8660254037844386467;
@@ -18,10 +17,6 @@ double V2 = -0.8660254037844386467;
 
 double W1 = -1.0;
 double W2 = 0.0;
-
-double MOTOR1 = X1*U1+X2*U2;
-double MOTOR2 = X1*V1+X2*V2;
-double MOTOR3 = X1*W1+X2*W2;
 
 #ifndef LED_BUILTIN
 #define LED_BUILTIN 13
@@ -36,19 +31,18 @@ void setup()
 
 void loop()
 {
-  // turn the LED on (HIGH is the voltage level)
-  digitalWrite(LED_BUILTIN, HIGH);
+  double x1 = cos(T);
+  double x2 = sin(T);
 
-  // wait for a second
-  delay(1000);
+  double m1 = x1*U1+x2*U2;
+  double m2 = x1*V1+x2*V2;
+  double m3 = x1*W1+x2*W2;
 
-  // turn the LED off by making the voltage LOW
-  digitalWrite(LED_BUILTIN, LOW);
+  motor1(abs(m1*100), m1 < 0);
+  motor2(abs(m2*100), m2 < 0);
+  motor3(abs(m3*100), m3 < 0);
 
-   // wait for a second
-  delay(1000);
+  T += 0.001;
 
-  motor1(abs(MOTOR1*100), MOTOR1 < 0);
-  motor2(abs(MOTOR2*100), MOTOR2 < 0);
-  motor3(abs(MOTOR3*100), MOTOR3 < 0);
+  delay(1);
 }

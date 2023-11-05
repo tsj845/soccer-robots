@@ -27,6 +27,7 @@ void setup()
   // initialize LED digital pin as an output.
   pinMode(LED_BUILTIN, OUTPUT);
   InitializeZircon();
+  Serial.begin(9600);
 }
 
 void loop()

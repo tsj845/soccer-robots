@@ -6,3 +6,9 @@
 "macFrameworkPath": [
     "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
 ],
+
+
+
+******
+
+To fix Serial not being found in vscode, do CMD + SHIFT + P, and run "platformio: rebuild intellisense index"

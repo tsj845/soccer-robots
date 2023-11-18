@@ -1,6 +1,7 @@
 "includePath": [
     "${workspaceFolder}/**",
     "${workspaceFolder}/.pio/libdeps/**",
+    "${workspaceFolder}/lib/**",
     "~//.platformio/**"
 ],
 "macFrameworkPath": [
